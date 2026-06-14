@@ -4,6 +4,8 @@ import hercules from "@usehercules/vite";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 export default defineConfig({
   server: {
     host: "0.0.0.0",
@@ -13,7 +15,7 @@ export default defineConfig({
       overlay: false,
     },
   },
-  plugins: [react(), tailwindcss(), hercules()],
+  plugins: [react(), tailwindcss(), hercules(), cloudflare()],
   resolve: {
     alias: {
       "@/convex": path.resolve(__dirname, "./convex"),
